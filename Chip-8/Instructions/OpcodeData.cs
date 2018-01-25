@@ -1,6 +1,6 @@
 ﻿namespace Chiped.Instructions
 {
-    internal class OpCodeData
+    public class OpCodeData
     {
         private readonly ushort OpCode;
 

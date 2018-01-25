@@ -1,34 +1,31 @@
-﻿using System;
-
-namespace Chiped.Processor
+﻿namespace Chiped.Processor
 {
-    internal class RegisterBank : IRegisterBank
+    public class RegisterBank : IRegisterBank
     {
-        private byte v0;
-        private byte v1;
-        private byte v2;
-        private byte v3;
-        private byte v4;
-        private byte v5;
-        private byte v6;
-        private byte v7;
-        private byte v8;
-        private byte v9;
-        private byte vA;
-        private byte vB;
-        private byte vC;
-        private byte vD;
-        private byte vE;
-        private byte vF;
+        public byte V0 { get; set; }
+        public byte V1 { get; set; }
+        public byte V2 { get; set; }
+        public byte V3 { get; set; }
+        public byte V4 { get; set; }
+        public byte V5 { get; set; }
+        public byte V6 { get; set; }
+        public byte V7 { get; set; }
+        public byte V8 { get; set; }
+        public byte V9 { get; set; }
+        public byte VA { get; set; }
+        public byte VB { get; set; }
+        public byte VC { get; set; }
+        public byte VD { get; set; }
+        public byte VE { get; set; }
+        public byte VF { get; set; }
 
-        private ushort i;
-        private ushort programCounter;
+        public ushort Address { get; set; }
+        public ushort ProgramCounter { get; set; }
 
-        public ushort ProgramCounter { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        public void IncrementProgramCounter()
+        // I should probably create a register abstraction, but ill come back to that.
+        public void IncrementProgramCounter(ushort incrementBy = 1)
         {
-            throw new NotImplementedException();
+            ProgramCounter += incrementBy;
         }
     }
 }

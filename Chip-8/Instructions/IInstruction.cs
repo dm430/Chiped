@@ -3,7 +3,7 @@ using Chiped.Processor;
 
 namespace Chiped.Instructions
 {
-    internal interface IInstruction
+    public interface IInstruction
     {
         void Execute(OpCodeData data, IRegisterBank registerBank, IMemory memory);
     }

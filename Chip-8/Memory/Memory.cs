@@ -1,27 +1,36 @@
-﻿using System;
-
-namespace Chiped.Memory
+﻿namespace Chiped.Memory
 {
     internal class Memory : IMemory
     {
+        private readonly byte[] AddressSpace;
+
+        public Memory()
+        {
+            AddressSpace = new byte[4096];
+        }
+
         public void LoadToMemory(ushort address, byte[] data)
         {
-            throw new NotImplementedException();
+            data.CopyTo(AddressSpace, address);
         }
 
         public ushort ReadDoubleWord(ushort address)
         {
-            throw new NotImplementedException();
+            var highByte = AddressSpace[address];
+            var lowByte = AddressSpace[address + 1];
+            var value = (ushort) ((highByte << 4) | lowByte);
+
+            return value;
         }
 
         public byte ReadWord(ushort address)
         {
-            throw new NotImplementedException();
+            return AddressSpace[address];
         }
 
         public void WriteWord(ushort address, byte value)
         {
-            throw new NotImplementedException();
+            AddressSpace[address] = value;
         }
     }
 }

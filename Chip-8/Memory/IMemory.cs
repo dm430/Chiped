@@ -1,6 +1,6 @@
 ﻿namespace Chiped.Memory
 {
-    internal interface IMemory
+    public interface IMemory
     {
         void LoadToMemory(ushort address, byte[] data);
         void WriteWord(ushort address, byte value);
