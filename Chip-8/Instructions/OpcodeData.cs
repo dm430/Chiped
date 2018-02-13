@@ -8,7 +8,7 @@
         {
             get
             {
-                return (byte) (OpCode & 0xFFF);
+                return (ushort) (OpCode & 0xFFF);
             }
         }
 
@@ -24,7 +24,7 @@
         {
             get
             {
-                return (byte) (OpCode & 0x000F);
+                return (byte) (OpCode & 0xF);
             }
         }
 
@@ -32,7 +32,7 @@
         {
             get
             {
-                return (byte) ((OpCode * 0x0F00) >> 8);
+                return (byte) ((OpCode & 0xF00) >> 8);
             }
         }
 
@@ -40,7 +40,7 @@
         {
             get
             {
-                return (byte) ((OpCode & 0x00F0) >> 4);
+                return (byte) ((OpCode & 0xF0) >> 4);
             }
         }
 
